@@ -43,7 +43,7 @@ export default class Game {
     }
 
     draw(ctx) {
-        this.gameObjects.forEach(obj => obj.draw(ctx));
+        [...this.gameObjects, ...this.bricks].forEach(object => object.draw(ctx));
 
         if (this.gameState == GAMESTATE.PAUSED) {
             ctx.rect(0, 0, this.gameWidth, this.gameHeight);
